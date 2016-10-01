@@ -142,6 +142,34 @@ function updateUserindex(){
 
         return View::make('blog.post', $data);
     }
+    
+    /*this method belongs to the evaluationController, had a route problem*/
+    function searchforStudents() {
+
+        $searchId = Input::get('sid');
+
+        /*get project title according to the student's id*/
+	//$protitle = \App\Evaluation::where('studentId', $searchId)->pluck('title');
+        $protitle = DB::table('projects')
+                    ->where('studentId', $searchId)
+                    ->Where('status', 'Approved')
+                    ->pluck('title');
+        
+        /*get project id according to the student's id*/
+        //$proid = \App\Evaluation::where('studentId', $searchId)->pluck('id');
+        $proid = DB::table('projects')
+                    ->where('title', $protitle)
+                    ->Where('status', 'Approved')
+                    ->pluck('id');
+        
+       /*get student name according to the student's id*/
+	$stuname = DB::table('students')
+                    ->where('id', $searchId)
+                    ->pluck('name');
+	      
+        $data = array("title" => $protitle, "pid" => $proid, "sname" => $stuname);
+        return json_encode($data);
+    }
 
 }
 

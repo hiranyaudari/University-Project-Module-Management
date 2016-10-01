@@ -18,12 +18,6 @@
     <link href="{{ asset('public_assets/css/plugins/steps/jquery.steps.css') }}" rel="stylesheet">
     <link href="{{ asset('public_assets/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('public_assets/css/style.css') }}" rel="stylesheet">
-
-
-        <title>Student Profile</title>
-
-
-
         <link href="{{ asset('public_assets/css/animate.css')}}" rel="stylesheet">
         <link href="{{ asset('public_assets/css/plugins/summernote/summernote.css')}}" rel="stylesheet">
         <link href="{{ asset('public_assets/css/plugins/summernote/summernote-bs3.css')}}" rel="stylesheet">

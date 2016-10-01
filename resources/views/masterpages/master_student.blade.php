@@ -50,6 +50,11 @@
                     <a href="/studentdashboard"><i class="fa fa-th-large"></i> <span class="nav-label">Student Dashboard</span> </a>
 
                 </li>
+                
+                <li>
+                    <a href="/grouping"><i class="fa fa-th-large"></i> <span class="nav-label">Form Group</span> </a>
+
+                </li>
                 {{--<li>--}}
                     {{--<a href="/forgotpassword"><i class="fa fa-th-large"></i> <span class="nav-label">Change Password</span> </a>--}}
                 {{--</li>--}}
@@ -90,6 +95,9 @@
                 </li>
 
                 <li>
+                    <a href="/diaryhome"><i class="fa fa-th-large"></i> <span class="nav-label">Project Diary</span> </a>
+
+                </li>
             </ul>
 
         </div>
@@ -180,18 +188,18 @@
                                                             <small class="text-muted"><?php $now = new DateTime();
                                                                 echo $now->diff($rpc->created_at)->format("%a");?> days ago at <?php echo date_format($rpc->created_at, 'g:i A');?> - <?php echo $newDate = date("Y/m/d", strtotime($rpc->created_at)); ?>
                                                             </small>
+                                                            <br>
                                                         </div>
-
-                                                    </div>
+                                                        
+                                                        <button style="margin-left: 78px" type="button" class="btn btn-info btn-foursquare"><i class="fa fa-check"></i></button> 
+                                                         
+                                                        <button style="margin-left: 24px" type="button" class="btn btn-warning btn-foursquare"><i class="fa fa-times"></i></button> 
+                                                    
+                                                        </div>
                                                 </li>
                                                 <li class="divider"></li>
                                             @endif
-
-
-
-
-
-                                        @endforeach
+                                            @endforeach
                                     @endfor
                                 </ul>
                             </li>

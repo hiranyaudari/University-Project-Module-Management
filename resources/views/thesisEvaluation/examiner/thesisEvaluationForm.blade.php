@@ -20,7 +20,7 @@ $(document).ready(function(){
 @section('title')
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Evaluate Thesis Presentation</h2>
+            <h2>Evaluate Final Presentation</h2>
             <ol class="breadcrumb">
 
             </ol>
@@ -52,7 +52,7 @@ $(document).ready(function(){
 <form method="post">
 <div>
               <table class="table table-bordered" style="width: 400px;font-size: 13">
-              <div><h2><strong>Thesis Evaluation Form</strong></h2></div>
+              <div><h2><strong>Final Evaluation Form</strong></h2></div>
                                 <tbody>
                                 <tr>
                                     <td style="width: 120px">Student ID</td>

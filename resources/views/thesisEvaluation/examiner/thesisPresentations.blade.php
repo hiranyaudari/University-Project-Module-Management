@@ -3,7 +3,7 @@
 @section('title')
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2> Thesis Presentation Evaluation</h2>
+            <h2> Final Presentation Evaluation</h2>
             <ol class="breadcrumb">
 
             </ol>
@@ -17,7 +17,7 @@
 <div class="col-lg-12">
     <form id="" action='' method='post' >
        <div class="ibox-title">
-                       <strong>Thesis Presentation evaluations on  <?php echo date("d-m-Y")?></strong>
+                       <strong>Final Presentation evaluations on  <?php echo date("d-m-Y")?></strong>
        </div>
        <div class="ibox-content">
              <div class="project-list">

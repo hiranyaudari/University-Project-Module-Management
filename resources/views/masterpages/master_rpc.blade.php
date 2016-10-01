@@ -112,10 +112,150 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
 
-                             </span>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Session::get('userName')[0] }}</strong>
-                             </span> <span class="text-muted text-xs block">{{ Session::get('userPosition')[0] }}<b class="caret"></b></span> </span> </a>
+
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Session::get('userName')[0] }}</strong>
+                                    </span> <span class="text-muted text-xs block">{{ Session::get('userPosition')[0] }}<b class="caret"></b></span> </span> </a>
+
+                        </div>
+                        <div class="logo-element">
+
+                        </div>
+                    </li>
+
+                    <li class="active">
+                        <a href="/rpcdashboard"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> <span class="fa"></span></a>
+
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Project</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/allProjects">All Projects</a></li>
+                            <li ><a href="/RPCViewOwnProject">Own Projects</a></li>
+                            <li ><a href="/ViewPendingProjects">Pending Projects</a></li>
+                            <li ><a href="/viewExternalSupervisorProject">External Client Projects</a></li>
+
+                        </ul>
+                    </li>
+                    <!--                Harsha added - add research area -->
+                    <li>
+                        <a href="/addResearchArea"><i class="fa fa-th-large"></i> <span class="nav-label">Add Research Area</span></a>
+                    </li>
+                    <!--                end of add research area-->
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Supervisor</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/ExternalSup">Add Supervisor</a></li>
+                            <li class="active"><a href="/updateExternalSupervisor">Update Supervisor</a></li>
+                            <li class="active"><a href="/changeSup">Change Supervisor</a></li>
+                            <li>
+                                <a href="/profile"> <span class="nav-label">View Profile</span> </a>
+
+                            </li>
+                            <li><a href="/approvedExternalSupervisors">View Approved</a></li>
+                            <!--li ><a href="#">View Pending</a></li-->
+                            <li ><a href="/rejectedSupervisors">View Rejected</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Notice</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/addNotice">Add Notice</a></li>
+                            <li ><a href="/viewNotice">View Notice</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">User Accounts</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/addUser">Register</a></li>
+                            <li ><a href="/updateUser">Update</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Proposal Presentations</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/proposalpanels">View Presentation Schedules</a></li>
+                            <li><a href="/proposalpanels/create">Create a Panel</a></li>
+                            <li><a href="/viewAllPanelmembers">All Panel Members</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Final Presentations</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/thesispanels">View presentation schedules</a></li>
+                            {{--<li><a href="/thesispanels/create">Create a Panel</a></li>--}}
+                            <li><a href="/thesispanels/calendar/add">Create a schedule </a></li>
+                            <li><a href="/thesispanels/calendar">View schedules in calendar</a></li>
+                        </ul>
+                    </li>
+
+                    {{--<li>--}}
+                    {{--<a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Monthly Reports</span><span class="fa arrow"></span></a>--}}
+                    {{--<ul class="nav nav-second-level">--}}
+                    {{--<li><a href="/monthlyreports">View Monthly Reports</a></li>--}}
+                    {{--<li><a href="/monthlyreports/student/create">Student Monthly Report</a></li>--}}
+                    {{--<li><a href="/monthlyreports/supervisor/create">Supervisor Feedback Form</a></li>--}}
+                    {{--</ul>--}}
+                    {{--</li>--}}
+
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Proposal Evaluation</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/viewInternalProposals">View evaluated finals</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Final Evaluation</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/form">Edit Form</a></li>
+                            <li class="active"><a href="/viewInternalProjects">View evaluated finals</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/freeSlotManager"><i class="fa fa-th-large"></i> <span class="nav-label">Free Slot Management</span></a>
+
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Upload Links</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="/upload">Add Link</a></li>
+                            <li ><a href="/viewLink">View Links</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/viewSubmissions"><i class="fa fa-th-large"></i> <span class="nav-label">Student Submissions</span> </a>
+
+                    </li>
+                    
+                    <!--                Harsha added - add evaluation -->
+                    <li>
+                        <a href="/evaluationform"><i class="fa fa-th-large"></i> <span class="nav-label">Evaluation</span></a>
+                    </li>
+                    <!--                end of add evaluation-->
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0" >
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary "><i class="fa fa-bars"></i> </a>
+
 
                     </div>
                     <div class="logo-element">

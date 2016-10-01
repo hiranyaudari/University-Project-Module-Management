@@ -110,9 +110,10 @@ Route::group(array('middleware' => 'guest', 'middleware' => 'rpc'), function() {
     Route::post('viewNotice', 'NoticeController@notice_buttons');
     Route::get('viewNotice','NoticeController@viewLink');
 
-    Route::get('addNotice','NoticeController@add_new_notice');
-    Route::post('addNotice','NoticeController@addNotice');
-    
+    Route::get('addNotice', 'NoticeController@add_new_notice');
+    Route::post('addNotice', 'NoticeController@addNotice');
+  
+
     //harsha added
     Route::get('addResearchArea','AddResearchArea@add_research_area');
     Route::post('addResearchArea','AddResearchArea@storeResearchArea');
@@ -123,8 +124,20 @@ Route::group(array('middleware' => 'guest', 'middleware' => 'rpc'), function() {
     
     //Route::resource('addResearchArea/{id}', 'AddResearchArea@destroy');
 
-    Route::get('editNotice/{id}','NoticeController@editNoticeView');//------------------
-    Route::post('editNotice/{id}','NoticeController@editNotice');//--------------
+    
+    //evaluationform routes added by harsha///////////////////////////////
+    Route::get('evaluationform', 'EvaluationController@create');
+    Route::get('/searchstudent', 'createUserController@searchforStudents');
+    
+    Route::get('formsupervisor', 'supervisorevaluation@create');
+    
+    
+    Route::get('editNotice/{id}', 'NoticeController@editNoticeView'); //------------------
+    Route::post('editNotice/{id}', 'NoticeController@editNotice'); //--------------
+    //notification
+    Route::get('/viewSupervisorDetails/{projectId}/{notificationId}/{id}', 'notificationController@showRpcNotification');
+    Route::get('/addSupervisorForProject', 'SupervisorController@SupervisorController');
+
 
 
 
@@ -249,8 +262,23 @@ Route::group(array('middleware' => 'guest', 'middleware' => 'panelmember'), func
 //view Specific Project Details
     Route::get('/viewProjectDetails/{studentId}/{projectId}','projectController@showSpecificProjectDet');
 
-    Route::get('/projectPool/{supId}','projectController@showProjectPool');
-    Route::post('/projectPool/{supId}','projectController@selectProjectPool');
+
+    Route::get('/projectPool/{supId}', 'projectController@showProjectPool');
+    Route::post('/projectPool/{supId}', 'projectController@selectProjectPool');
+    
+    ///////////////////////////harsha////////////
+    Route::any('propevaluation', 'supevaluationController@create');
+    Route::any('srsevaluation', 'supevaluationController@srscreate');
+    Route::any('protoevaluation', 'supevaluationController@protocreate');
+    Route::any('midevaluation', 'supevaluationController@midcreate');
+    
+    
+    Route::get('thesisPresentations', 'thesisEvaluationController@viewPresentations');
+    Route::get('thesisEvaluationForm/{id}', 'thesisEvaluationController@viewThesisForm');
+    Route::post('thesisEvaluationForm/{id}', 'thesisEvaluationController@evaluate');
+    Route::get('editThesis/{id2}', 'thesisEvaluationController@editThesisEvaluation');
+    Route::post('editThesis/{id2}', 'thesisEvaluationController@editForm');
+
 
 
    
@@ -305,10 +333,28 @@ Route::group(array('middleware' => 'guest', 'middleware' => 'student'), function
     Route::get('download/{filename}', 'studentController@downloadFile');
     Route::get('view1/{filename1}','studentController@viewpdffile');
 
-    Route::get('changeSupervisor','StudentController@viewChangeSupervisorForm');
-    Route::post('changeSupervisor','StudentController@insertChangeSupervisorDetails');
-    Route::get('studentDetails/{name}','RPCController@viewStudentDetails');
-    Route::get('feedback','StudentController@viewStatus');
+    Route::get('changeSupervisor', 'StudentController@viewChangeSupervisorForm');
+    Route::post('changeSupervisor', 'StudentController@insertChangeSupervisorDetails');
+    Route::get('studentDetails/{name}', 'RPCController@viewStudentDetails');
+    Route::get('feedback', 'StudentController@viewStatus');
+    Route::get('projectReRegistration', 'StudentProposalController@viewRegistrationForm');
+    Route::post('projectReRegistration', 'StudentProposalController@Registration');
+    Route::get('report', 'reportController@index');
+    Route::get('studentprofile', 'reportController@viewStudentProfile');
+    
+    
+    
+    ////////////////////////diluni////////
+    Route::get('diaryhome', 'diaryController@create');
+    Route::get('tasks', 'diaryController@taskopen');
+    Route::post('tasks', 'diaryController@storeTasks');
+    
+    Route::resource('DELETE', 'diaryController@destroy');
+    Route::get('DELETE/{id}', 'diaryController@destroy');
+    
+    ////////////////////////hiru////////
+    Route::get('grouping', 'GroupController@viewPool');
+
 
 
 
