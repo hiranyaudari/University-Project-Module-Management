@@ -223,7 +223,7 @@ class StudentController extends Controller {
             'password' => $password,
         ));
 //        $user = Sentinel::findById(1);
-        $role = Sentinel::findRoleByName('Students');
+        $role = Sentinel::findRoleByName('Student');
         $role->users()->attach($user);
     }
     public function addStudent($name,$regId,$email,$tel,$attempt,$username,$courseField){
@@ -231,6 +231,7 @@ class StudentController extends Controller {
         $entry->name = $name;
         $entry->regId = $regId;
         $entry->email = $email;
+        //dd($tel);
         $entry->phone = $tel;
         $entry->attempt = $attempt;
         $entry->username = $username;
@@ -263,17 +264,21 @@ class StudentController extends Controller {
     }
 
     public function addProject($projectTitle,$projectDescription,$projectUrl,$projectStudentNo,$projectSupervisorId,$projectStatus){
-        $entry = new Project;
-        $entry->title = $projectTitle;
-        $entry->description = $projectDescription;
-        $entry->url = $projectUrl;
-        $entry->studentId = $projectStudentNo;
-        $entry->supervisorId = $projectSupervisorId;
-        $entry->status = $projectStatus;
+        
+        if($projectTitle != "")
+        {//group id should goto the table in a format and must assign after approving the project
+            $entry = new Project;
+            $entry->title = $projectTitle;
+            $entry->description = $projectDescription;
+            $entry->url = $projectUrl;
+            $entry->studentId = $projectStudentNo;
+            $entry->supervisorId = $projectSupervisorId;
+            $entry->status = $projectStatus;
 
-        if($entry->save()){
-            return $entry->id;
-        }
+            if($entry->save()){
+                return $entry->id;
+            }
+        }        
     }
 
     //VIEW SUPERVISOR CHANGE REQUEST FORM
