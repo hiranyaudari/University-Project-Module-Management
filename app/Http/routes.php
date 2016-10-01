@@ -280,8 +280,9 @@ Route::group(array('middleware' => 'guest', 'middleware' => 'student'), function
     Route::get('tasks', 'diaryController@taskopen');
     Route::post('tasks', 'diaryController@storeTasks');
     
-    Route::resource('DELETE', 'diaryController@destroy');
-    Route::get('DELETE/{id}', 'diaryController@destroy');
+    /*if decommented research are delete wont work*/
+//    Route::resource('DELETE', 'diaryController@destroy');
+//    Route::get('DELETE/{id}', 'diaryController@destroy');
     
     ////////////////////////hiru////////
     Route::get('grouping', 'GroupController@viewPool');
