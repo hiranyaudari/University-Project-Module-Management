@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grouping extends Model {
+class ResearchGroups extends Model {
 
     protected $table = 'research_groups';
 
